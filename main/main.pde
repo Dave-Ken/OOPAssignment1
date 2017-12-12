@@ -1,6 +1,7 @@
 
 //array to store 1000 stars
 Star[] stars = new Star[1000];
+//array to store 7 space rocks
 SpaceRock[] rocks = new SpaceRock[7];
 
 void setup() {
@@ -18,11 +19,24 @@ void setup() {
 }
 
 void draw() {
-
+ 
   background(#D2D2CB);
+  
+  //Call a function that keeps track of the score to print th score to the screen
   printScore();
+  
+  // Displays a list of the ships controles on the screens dashboard
+  fill(#0011FF);
+  text ("A Turn Left", 70, height-110);
+  text ("D Turn Right", 70, height-90);
+  text ("W Look Up", 70, height-70);
+  text ("D Look Down", 70, height-50);
+  text ("P Seend Up", 150, height-110);
+  text ("L Slow Down", 150, height-90);
+  text ("Click Mouse To Fire", 150, height-70);
+  
+  //Creats the ships Window
   fill(0);
-  //ships Window
   rect(55, 55, width-110, height-200, 20);
   
 
@@ -30,18 +44,16 @@ void draw() {
   for (int i = 0; i < stars.length; i++) {
     stars[i].show();
   }
-  //generating rock
+  //generating rocks
   for (int i = 0; i < rocks.length; i++) {
     rocks[i].show();
   }
   
-
-  //text ("5.00", width-250, height-70);
-  //ship gun 1
+  //ship gun 1 (left)
   fill(#838383);
   rect(width /2 + width/5, height-200, 15, 55);
   
-  //ship gun 2
+  //ship gun 2 (Right)
   //fill(#838383);
  rect(width /2 - width/5, height-200, 15, 55);
 
@@ -52,21 +64,15 @@ void draw() {
   } else {
     fill(#FF0000);
     triangle(mouseX, mouseY, mouseX-15, mouseY+20, mouseX+15, mouseY+20);
-  }
-  
-
-  
-  
+  }  
 }
-
-
+  
+  
 // ships lazer
 void mousePressed() {
   int  rx = mouseX;
   int  ry = mouseY;
   
-  
-
   //gun 1 lazer
   strokeWeight(6);
   stroke(#DBDF67);
@@ -78,16 +84,17 @@ void mousePressed() {
   stroke(#DBDF67);
   line(width /2 - width/5 + 5 , height-200, rx, ry);
   
+  // Used for collision detection
    for (int i = 0; i < rocks.length; i++) {
     rocks[i].hit(rx, ry);
    }
 }
 
 
-
 //Ship controls
 void keyPressed() {
   switch(key){
+    
     // turn ship left
      case 'a':
         for (int i = 0; i < stars.length; i++) {
@@ -164,8 +171,7 @@ void keyPressed() {
      //Speed up Ship
      case 'p':
            for (int i = 0; i < stars.length; i++) {
-             stars[i].speedUp();
-             
+             stars[i].speedUp();  
           }
      break;
      case 'P':
@@ -183,11 +189,9 @@ void keyPressed() {
      case 'L':
             for (int i = 0; i < stars.length; i++) {
             stars[i].speedDown();
-          }
-          
+          }         
      break;
-   
-    
+      
   } 
   
 

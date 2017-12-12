@@ -11,18 +11,16 @@ class Star {
   
   Star(){
     
-  // account 5 px for screen curve
-    
+  // account 5 px for screen curve 
   fill(#FFFFFF);
   x = random(55, width-60);
   y = random(55, height-150);
-
  }
  
-   // ship can look left
+   // ship can turn left
    void updateLeft(){
      fill(#F61D1D);
-    text ("Turning Left", 250, height-90);
+    text ("Turning Left", 300, height-90);
     x +=speed;  
      if(x >= width-60){
            fill(#FFFFFF);
@@ -32,34 +30,33 @@ class Star {
     
    }
   
-   // ship can look Right
+   // ship can turn Right
    void updateRight(){
-     fill(#F61D1D);
-    text ("Turning Right", 250, height-90);
+    fill(#F61D1D);
+    text ("Turning Right", 300, height-90);
     x -=speed;
     if(x <= 55){
           fill(#FFFFFF);
           x = width-60;
           y = random(55, height-150);
       } 
-    
    }
-   // ship can look up
+   
+   // ship can turn up
    void updateUp(){
      fill(#F61D1D);
-    text ("Accending", 250, height-90);
+    text ("Accending", 300, height-90);
     y +=speed;
     if(y >= height-150){
        fill(#FFFFFF);
        x = random(55, width-60);
        y = 55;
       } 
-    
    }
-   // ship can look down
+   // ship can turn down
    void updateDown(){
     fill(#F61D1D);
-    text ("Decending", 250, height-90);
+    text ("Decending", 300, height-90);
     y -=speed;
     if(y <= 55){
          fill(#FFFFFF);
@@ -106,28 +103,21 @@ class Star {
  void speedUp(){
    
    if ((speed + .3)< 11){
-     speed = speed + .3;
-    
-   }
+       speed = speed + .3;
+     }
    else{
         return;
+     }
    }
- }
-  //Slow ships speed Down
- void speedDown(){
-   
-   if(speed <= 1){
-     speed=0;
-     return;
-   }
-   else{
-     speed = speed - .3; 
-   }
- }
- 
-   void warpSpeed(){
-   
-     
-   }
+    //Slow ships speed Down
+   void speedDown(){
+     if(speed <= 1){
+         speed=0;
+         return;
+       }
+     else{
+       speed = speed - .3; 
+     }
+   } 
  }
  
