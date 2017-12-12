@@ -61,12 +61,14 @@ void mousePressed() {
 }
 
 
+
+//Ship controls
 void keyPressed() {
   switch(key){
+    // turn ship left
      case 'a':
         for (int i = 0; i < stars.length; i++) {
             stars[i].updateLeft();
-           
         }
      break;
      case 'A':
@@ -74,6 +76,8 @@ void keyPressed() {
             stars[i].updateLeft();
           }
      break;
+     
+     //Turn ship Down
      case 's':
           for (int i = 0; i < stars.length; i++) {
             stars[i].updateDown();
@@ -84,6 +88,8 @@ void keyPressed() {
             stars[i].updateDown();
           }
      break;
+     
+     //Turn ship up
      case 'w':
            for (int i = 0; i < stars.length; i++) {
              stars[i].updateUp();
@@ -94,6 +100,8 @@ void keyPressed() {
             stars[i].updateUp();
           }
      break;
+     
+     // Turn ship right
      case 'd':
            for (int i = 0; i < stars.length; i++) {
             stars[i].updateRight();
@@ -104,8 +112,36 @@ void keyPressed() {
             stars[i].updateRight();
           }
      break;
+     
+     
+     
+     //Speed up Ship
+     case 'p':
+           for (int i = 0; i < stars.length; i++) {
+             stars[i].speedUp();
+          }
+     break;
+     case 'P':
+           for (int i = 0; i < stars.length; i++) {
+            stars[i].speedUp();
+          }
+     break;
+     
+     // Lower ship speed
+     case 'l':
+           for (int i = 0; i < stars.length; i++) {
+            stars[i].speedDown();
+          }    
+     break;
+     case 'L':
+            for (int i = 0; i < stars.length; i++) {
+            stars[i].speedDown();
+          }
+          
+     break;
    
     
   } 
   
+
 }

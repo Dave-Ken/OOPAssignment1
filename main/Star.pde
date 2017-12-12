@@ -3,7 +3,7 @@ class Star {
   float x;
   float y;
   
-  
+  //Store ship Speed
   float speed = 5;
   
   //size of star
@@ -14,7 +14,7 @@ class Star {
   // account 5 px for screen curve
   x = random(55, width-60);
   y = random(55, height-150);
-  z = width-110;
+
  }
  
    void update(){
@@ -63,5 +63,14 @@ class Star {
    ellipse(x, y, s, s);
    }
  
+ 
+ //Speed ships speed up
+ void speedUp(){
+   speed = speed + .3;
+ }
+  //Slow ships speed Down
+ void speedDown(){
+   speed = speed - .3; 
+ }
  
 }
