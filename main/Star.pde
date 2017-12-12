@@ -6,9 +6,11 @@ class Star {
   float s = random(1,7);
   
   Star(){
-  x = random(0, width);
-  y = random(0, height);
-  z = width;
+    
+  // account 5 px for screen curve
+  x = random(55, width-60);
+  y = random(55, height-150);
+  z = width-110;
  }
  
    void update(){
