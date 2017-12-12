@@ -1,6 +1,7 @@
 
 //array to store 1000 stars
 Star[] stars = new Star[1000];
+SpaceRock[] rocks = new SpaceRock[7];
 
 void setup() {
   size(1200, 600);
@@ -10,6 +11,10 @@ void setup() {
   for (int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
   }
+  for (int i = 0; i < rocks.length; i++) {
+    rocks[i] = new SpaceRock();
+  }
+  
 }
 
 void draw() {
@@ -24,7 +29,11 @@ void draw() {
   for (int i = 0; i < stars.length; i++) {
     stars[i].show();
   }
-
+  //generating rock
+  for (int i = 0; i < rocks.length; i++) {
+    rocks[i].show();
+  }
+  
 
   //text ("5.00", width-250, height-70);
   //ship gun 1

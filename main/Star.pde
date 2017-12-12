@@ -4,7 +4,7 @@ class Star {
   float y;
   
   //Store ship Speed
-  float speed = 5;
+  float speed = 3;
   
   //size of star
   float s = random(1,7);
@@ -19,6 +19,7 @@ class Star {
  
    // ship can look left
    void updateLeft(){
+    text ("Turning Left", 250, height-90);
     x +=speed;  
      if(x >= width-60){
            x = random(55, 55);
@@ -29,6 +30,7 @@ class Star {
   
    // ship can look Right
    void updateRight(){
+    text ("Turning Right", 250, height-90);
     x -=speed;
     if(x <= 55){
           x = width-60;
@@ -38,6 +40,7 @@ class Star {
    }
    // ship can look up
    void updateUp(){
+    text ("Accending", 250, height-90);
     y +=speed;
     if(y >= height-150){
        x = random(55, width-60);
@@ -47,6 +50,8 @@ class Star {
    }
    // ship can look down
    void updateDown(){
+    fill(#F61D1D);
+    text ("Decending", 250, height-90);
     y -=speed;
     if(y <= 55){
          x = random(55, width-60);
