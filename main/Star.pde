@@ -14,11 +14,8 @@ class Star {
  }
  
    void update(){
-   
-   
-   }
-   
     
+   }
    
    void show(){
    fill(255);

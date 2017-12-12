@@ -2,39 +2,61 @@
 //array to store 1000 stars
 Star[] stars = new Star[1000];
 
-void setup(){
+float t = width/5;
+void setup() {
   size(1200, 600);
+
+  //frameRate(40);
   //fullScreen();
-  for (int i = 0; i < stars.length; i++){
+  for (int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
   }
-  
-  
 }
 
-void draw(){
+void draw() {
+
   background(#D2D2CB);
-   /*for (int i = 0; i < stars.length; i++){
-    stars[i].update();
-    stars[i].show();
-   }
-   */
-   
-   //Ship
-   fill(0);
+
+  fill(0);
+  //ships Window
   rect(55, 55, width-110, height-200, 20);
-  
-   for (int i = 0; i < stars.length; i++){
-    stars[i].update();
+
+  //generating stars
+  for (int i = 0; i < stars.length; i++) {
     stars[i].show();
-   }
-  fill(#FF0000);
-  if(  (mouseX > width-110)  || (mouseX < 55)  || (mouseY > height-200)  || (mouseY < 55)){
-  fill(#D2D2CB);
   }
-  else{
-    fill(#FF0000);
-  triangle(mouseX, mouseY, mouseX-15, mouseY+20, mouseX+15, mouseY+20);
-  }
+
+  //ship gun 1
+  fill(#838383);
+  rect(width /2 + width/5, height-200, 15, 55);
   
+  //ship gun 2
+  //fill(#838383);
+ rect(width /2 - width/5, height-200, 15, 55);
+
+  //Target 
+  fill(#FF0000);
+  if (  (mouseX > width-55)  || (mouseX < 55)  || (mouseY > height-150)  || (mouseY < 55)) {
+    fill(#D2D2CB);
+  } else {
+    fill(#FF0000);
+    triangle(mouseX, mouseY, mouseX-15, mouseY+20, mouseX+15, mouseY+20);
+  }
+}
+
+
+// ships lazer
+void mousePressed() {
+  int  x = mouseX;
+  int  y = mouseY;
+
+  //gun 1 lazer
+  strokeWeight(6);
+  stroke(#DBDF67);
+  line(width /2 + width/5, height-200, x, y);
+  
+  //gun 1 lazer
+  strokeWeight(6);
+  stroke(#DBDF67);
+  line(width /2 - width/5, height-200, x, y);
 }
