@@ -2,7 +2,6 @@
 //array to store 1000 stars
 Star[] stars = new Star[1000];
 
-float t = width/5;
 void setup() {
   size(1200, 600);
 
@@ -53,10 +52,60 @@ void mousePressed() {
   //gun 1 lazer
   strokeWeight(6);
   stroke(#DBDF67);
-  line(width /2 + width/5, height-200, x, y);
+  line(width /2 + width/5 + 5 , height-200, x, y);
   
   //gun 1 lazer
   strokeWeight(6);
   stroke(#DBDF67);
-  line(width /2 - width/5, height-200, x, y);
+  line(width /2 - width/5 + 5 , height-200, x, y);
+}
+
+
+void keyPressed() {
+  switch(key){
+     case 'a':
+        for (int i = 0; i < stars.length; i++) {
+            stars[i].updateLeft();
+           
+        }
+     break;
+     case 'A':
+         for (int i = 0; i < stars.length; i++) {
+            stars[i].updateLeft();
+          }
+     break;
+     case 's':
+          for (int i = 0; i < stars.length; i++) {
+            stars[i].updateDown();
+          }
+     break;
+     case 'S':
+           for (int i = 0; i < stars.length; i++) {
+            stars[i].updateDown();
+          }
+     break;
+     case 'w':
+           for (int i = 0; i < stars.length; i++) {
+             stars[i].updateUp();
+          }
+     break;
+     case 'W':
+           for (int i = 0; i < stars.length; i++) {
+            stars[i].updateUp();
+          }
+     break;
+     case 'd':
+           for (int i = 0; i < stars.length; i++) {
+            stars[i].updateRight();
+          }
+     break;
+     case 'D':
+           for (int i = 0; i < stars.length; i++) {
+            stars[i].updateRight();
+          }
+     break;
+   
+    
+  } 
+  
 }
