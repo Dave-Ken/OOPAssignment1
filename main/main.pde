@@ -20,6 +20,7 @@ void setup() {
 void draw() {
 
   background(#D2D2CB);
+  printScore();
   fill(0);
   //ships Window
   rect(55, 55, width-110, height-200, 20);
@@ -92,11 +93,17 @@ void keyPressed() {
         for (int i = 0; i < stars.length; i++) {
             stars[i].updateLeft();
         }
+            for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateLeft();
+        }
      break;
      case 'A':
          for (int i = 0; i < stars.length; i++) {
             stars[i].updateLeft();
           }
+           for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateLeft();
+        }
      break;
      
      //Turn ship Down
@@ -104,11 +111,17 @@ void keyPressed() {
           for (int i = 0; i < stars.length; i++) {
             stars[i].updateDown();
           }
+           for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateDown();
+        }
      break;
      case 'S':
            for (int i = 0; i < stars.length; i++) {
             stars[i].updateDown();
           }
+           for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateDown();
+        }
      break;
      
      //Turn ship up
@@ -116,22 +129,34 @@ void keyPressed() {
            for (int i = 0; i < stars.length; i++) {
              stars[i].updateUp();
           }
+           for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateUp();
+        }
      break;
      case 'W':
            for (int i = 0; i < stars.length; i++) {
             stars[i].updateUp();
           }
-     break;
      
+      for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateUp();
+        }
+     break;
      // Turn ship right
      case 'd':
            for (int i = 0; i < stars.length; i++) {
             stars[i].updateRight();
           }
+          for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateRight();
+          }
      break;
      case 'D':
            for (int i = 0; i < stars.length; i++) {
             stars[i].updateRight();
+          }
+           for (int i = 0; i < rocks.length; i++) {
+            rocks[i].updateRight();
           }
      break;
     
