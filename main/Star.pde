@@ -17,9 +17,6 @@ class Star {
 
  }
  
-   void update(){
-    
-   }
    // ship can look left
    void updateLeft(){
     x +=speed;  
@@ -57,20 +54,66 @@ class Star {
       } 
    }
    
+   //display stars
    void show(){
-   fill(255);
-   noStroke();
-   ellipse(x, y, s, s);
+     fill(255);
+     noStroke();
+     ellipse(x, y, s, s);
+   
+     if(speed > 10){
+       fill(#F61D1D);
+       text (speed, width-250, height-70);
+       
+     }
+       if(speed > 8.5 && speed < 10){
+         fill(#E8F61D);
+         text (speed, width-250, height-70);
+       }
+     
+     if(speed < 8.5){
+       fill(#1D89F6);
+       text (speed, width-250, height-70);
+     }
+   
+
+   if(speed >= 10.6){
+       fill(#F61D1D);
+       text ("Max Speed", width-250, height-90);
+     }
+     
+   if(speed == 0){
+       fill(#0011FF);
+       text ("Engine Off", width-250, height-90);
+     }
    }
  
  
  //Speed ships speed up
  void speedUp(){
-   speed = speed + .3;
+   
+   if ((speed + .3)< 11){
+     speed = speed + .3;
+    
+   }
+   else{
+        return;
+   }
  }
   //Slow ships speed Down
  void speedDown(){
-   speed = speed - .3; 
+   
+   if(speed <= 1){
+     speed=0;
+     return;
+   }
+   else{
+     speed = speed - .3; 
+   }
  }
  
-}
+   void warpSpeed(){
+   
+     
+   }
+ }
+ 

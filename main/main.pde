@@ -15,16 +15,18 @@ void setup() {
 void draw() {
 
   background(#D2D2CB);
-
   fill(0);
   //ships Window
   rect(55, 55, width-110, height-200, 20);
+  
 
   //generating stars
   for (int i = 0; i < stars.length; i++) {
     stars[i].show();
   }
 
+
+  //text ("5.00", width-250, height-70);
   //ship gun 1
   fill(#838383);
   rect(width /2 + width/5, height-200, 15, 55);
@@ -41,6 +43,10 @@ void draw() {
     fill(#FF0000);
     triangle(mouseX, mouseY, mouseX-15, mouseY+20, mouseX+15, mouseY+20);
   }
+  
+
+  
+  
 }
 
 
@@ -112,13 +118,13 @@ void keyPressed() {
             stars[i].updateRight();
           }
      break;
-     
-     
+    
      
      //Speed up Ship
      case 'p':
            for (int i = 0; i < stars.length; i++) {
              stars[i].speedUp();
+             
           }
      break;
      case 'P':
