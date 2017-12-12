@@ -5,10 +5,9 @@ Star[] stars = new Star[1000];
 SpaceRock[] rocks = new SpaceRock[7];
 
 void setup() {
-  size(1200, 600);
+  //size(1200, 600);
 
-  //frameRate(40);
-  //fullScreen();
+  fullScreen();
   for (int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
   }
