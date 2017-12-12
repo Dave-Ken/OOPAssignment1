@@ -79,7 +79,7 @@ class SpaceRock {
     text ( score, 95, 30);
     if(score% 10 == 0){
     speed =+.1;
-}
+    }
     float random = random(1,4);
     int move = int(random);
     move(move);
@@ -91,7 +91,7 @@ class SpaceRock {
   
   int moveX = int(randomT);
   
- 
+   //move rocks left with out user interaction
     if(m== 1){
       for(int i=0; i <moveX;i++){
        for (int j = 0; j < rocks.length; j++) {
@@ -100,7 +100,8 @@ class SpaceRock {
      }
     }
     
-    // not needed the refresh rate causes the space rocks to move in a unpleasant way when they can move in all directions 
+    // not needed the refresh rate causes the space rocks to move in a unpleasant way when they can move in all directions
+    //move rocks righ with out user interaction
    /* if(m == 2){
     for(int i=0; i <moveX;i++){
      
@@ -110,6 +111,7 @@ class SpaceRock {
      }
     }*/
     
+    //move rocks up with out user interaction
     if(m == 3){
     for(int i=0; i <moveX;i++){
      
@@ -119,6 +121,7 @@ class SpaceRock {
      }
     }
     // not needed the refresh rate causes the space rocks to move in a unpleasant way when they can move in all directions 
+    //move rocks down with out user interaction
    /* if(m == 4 ){
     for(int i=0; i <moveX;i++){
      
