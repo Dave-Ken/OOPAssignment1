@@ -61,18 +61,25 @@ void draw() {
 
 // ships lazer
 void mousePressed() {
-  int  x = mouseX;
-  int  y = mouseY;
+  int  rx = mouseX;
+  int  ry = mouseY;
+  
+  
 
   //gun 1 lazer
   strokeWeight(6);
   stroke(#DBDF67);
-  line(width /2 + width/5 + 5 , height-200, x, y);
+  line(width /2 + width/5 + 5 , height-200, rx, ry);
+  
   
   //gun 1 lazer
   strokeWeight(6);
   stroke(#DBDF67);
-  line(width /2 - width/5 + 5 , height-200, x, y);
+  line(width /2 - width/5 + 5 , height-200, rx, ry);
+  
+   for (int i = 0; i < rocks.length; i++) {
+    rocks[i].hit(rx, ry);
+   }
 }
 
 

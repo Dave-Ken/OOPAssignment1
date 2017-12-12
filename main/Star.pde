@@ -12,6 +12,8 @@ class Star {
   Star(){
     
   // account 5 px for screen curve
+    
+  fill(#FFFFFF);
   x = random(55, width-60);
   y = random(55, height-150);
 
@@ -19,9 +21,11 @@ class Star {
  
    // ship can look left
    void updateLeft(){
+     fill(#F61D1D);
     text ("Turning Left", 250, height-90);
     x +=speed;  
      if(x >= width-60){
+           fill(#FFFFFF);
            x = random(55, 55);
            y = random(55, height-150);
       } 
@@ -30,9 +34,11 @@ class Star {
   
    // ship can look Right
    void updateRight(){
+     fill(#F61D1D);
     text ("Turning Right", 250, height-90);
     x -=speed;
     if(x <= 55){
+          fill(#FFFFFF);
           x = width-60;
           y = random(55, height-150);
       } 
@@ -40,9 +46,11 @@ class Star {
    }
    // ship can look up
    void updateUp(){
+     fill(#F61D1D);
     text ("Accending", 250, height-90);
     y +=speed;
     if(y >= height-150){
+       fill(#FFFFFF);
        x = random(55, width-60);
        y = 55;
       } 
@@ -54,6 +62,7 @@ class Star {
     text ("Decending", 250, height-90);
     y -=speed;
     if(y <= 55){
+         fill(#FFFFFF);
          x = random(55, width-60);
          y =height-150;
       } 
